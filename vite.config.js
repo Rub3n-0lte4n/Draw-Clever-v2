@@ -37,10 +37,5 @@ export default defineConfig({
     },
   },
 
-  // Pre-bundle Three.js so the dev server doesn't discover it through HTML
-  // scanning — that discovery is what trips the "could not auto-determine
-  // entry point" warning.
-  optimizeDeps: { include: ['three'] },
-
   server: { port: 5174, open: true },
 });
