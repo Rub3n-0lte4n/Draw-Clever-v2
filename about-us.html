@@ -14,22 +14,24 @@
     @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
     @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
     @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Playfair Display'; src: url('./Fonts/Playfair_Display/PlayfairDisplay.ttf') format('truetype-variations'), url('./Fonts/Playfair_Display/PlayfairDisplay.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Playfair Display'; src: url('./Fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype-variations'), url('./Fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype'); font-weight: 100 900; font-style: italic; font-display: swap; }
   </style>
   <link rel="stylesheet" href="/src/site.css" />
   <style>
-    #story { padding: 130px var(--pad) 30px; }
+    #story { padding: 150px var(--pad) 30px; }
     .story-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 90px; align-items: start; }
-    .story-grid h2 { font-size: clamp(34px, 4vw, 60px); line-height: 1.04; letter-spacing: -.015em; margin-top: 22px; }
+    .story-grid h2 { font-size: clamp(36px, 4.2vw, 64px); line-height: 1.04; letter-spacing: 0; margin-top: 22px; }
     .story-grid .body p { font-size: 15px; font-weight: 300; line-height: 1.95; color: var(--sub); margin-bottom: 22px; }
-    .story-grid .sig { font-family: 'Playfair Display SC', serif; font-style: italic; font-size: 18px; color: var(--text); margin-top: 10px; }
+    .story-grid .sig { font-family: 'Playfair Display', serif; font-style: italic; font-size: 19px; letter-spacing: -.01em; color: var(--text); margin-top: 10px; }
     #story .stats { margin-top: 80px; padding-top: 56px; border-top: 1px solid var(--line); }
-    #ethos { padding: 120px var(--pad); background: var(--ink-2); border-top: 1px solid var(--line); }
-    #ateliers { padding: 130px var(--pad); }
+    #ethos { padding: 176px var(--pad); background: var(--ink-2); border-top: 1px solid var(--line); }
+    #ateliers { padding: 176px var(--pad); }
     .ateliers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 56px; }
     .atelier { background: var(--ink-2); border: 1px solid var(--line); padding: 52px 48px; transition: border-color .4s, background .4s; }
     .atelier:hover { border-color: var(--gold-dim); background: var(--ink-3); }
-    .atelier .place { font-family: 'Playfair Display SC', serif; font-size: 30px; text-transform: uppercase; margin-bottom: 18px; }
-    .atelier .place .gold { font-size: 22px; }
+    .atelier .place { font-family: 'Playfair Display SC', serif; font-size: 32px; text-transform: none; letter-spacing: .01em; margin-bottom: 18px; }
+    .atelier .place .gold { font-size: 24px; }
     @media (max-width: 860px) { .story-grid { grid-template-columns: 1fr; gap: 36px; } .ateliers-grid { grid-template-columns: 1fr; } }
     @media (max-width: 680px) { #story, #ateliers { padding: 80px 20px; } #ethos { padding: 80px 20px; } .atelier { padding: 38px 28px; } }
   </style>
@@ -117,10 +119,10 @@
     <p class="intro">We work in the older tradition — buildings that compose themselves over a lifetime, in materials that age with their inhabitants.</p>
   </div>
   <div class="tenets reveal d1">
-    <div class="tenet"><div class="tenet-n">I</div><h3 class="tenet-t">Restraint</h3><p class="tenet-b">The discipline of removing, until what remains is essential and exact.</p></div>
-    <div class="tenet"><div class="tenet-n">II</div><h3 class="tenet-t">Materiality</h3><p class="tenet-b">Honest materials, honestly detailed. Stone, timber and light authored as carefully as the geometry itself.</p></div>
-    <div class="tenet"><div class="tenet-n">III</div><h3 class="tenet-t">Permanence</h3><p class="tenet-b">Buildings designed to be inherited, not refurbished. A century is our minimum horizon.</p></div>
-    <div class="tenet"><div class="tenet-n">IV</div><h3 class="tenet-t">Discretion</h3><p class="tenet-b">The work speaks first. We let the architecture introduce the client, never the other way around.</p></div>
+    <div class="tenet"><div class="tenet-n">01</div><h3 class="tenet-t">Restraint</h3><p class="tenet-b">The discipline of removing, until what remains is essential and exact.</p></div>
+    <div class="tenet"><div class="tenet-n">02</div><h3 class="tenet-t">Materiality</h3><p class="tenet-b">Honest materials, honestly detailed. Stone, timber and light authored as carefully as the geometry itself.</p></div>
+    <div class="tenet"><div class="tenet-n">03</div><h3 class="tenet-t">Permanence</h3><p class="tenet-b">Buildings designed to be inherited, not refurbished. A century is our minimum horizon.</p></div>
+    <div class="tenet"><div class="tenet-n">04</div><h3 class="tenet-t">Discretion</h3><p class="tenet-b">The work speaks first. We let the architecture introduce the client, never the other way around.</p></div>
   </div>
 </section>
 

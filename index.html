@@ -16,6 +16,8 @@
   <style>
     @font-face { font-family: 'Montserrat'; src: url('./Fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype-variations'), url('./Fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
     @font-face { font-family: 'Montserrat'; src: url('./Fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype-variations'), url('./Fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype'); font-weight: 100 900; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Playfair Display'; src: url('./Fonts/Playfair_Display/PlayfairDisplay.ttf') format('truetype-variations'), url('./Fonts/Playfair_Display/PlayfairDisplay.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Playfair Display'; src: url('./Fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype-variations'), url('./Fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype'); font-weight: 100 900; font-style: italic; font-display: swap; }
     @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
     @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
     @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
@@ -33,7 +35,7 @@
     .hero-badge { display: inline-flex; align-items: center; gap: 9px; border: 1px solid rgba(243,238,230,.16); border-radius: 100px; padding: 7px 15px 7px 11px; font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: rgba(243,238,230,.7); margin-bottom: 28px; backdrop-filter: blur(8px); width: fit-content; opacity: 0; animation: fadeUp .8s ease .3s forwards; }
     .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: #6FCF8E; box-shadow: 0 0 0 0 rgba(111,207,142,.5); animation: pulse 2.6s ease-in-out 1s infinite; }
     @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(111,207,142,.5); } 50% { box-shadow: 0 0 0 7px rgba(111,207,142,0); } }
-    .hero-title { font-size: clamp(54px, 8.6vw, 142px); line-height: .9; letter-spacing: -.018em; }
+    .hero-title { font-size: clamp(58px, 9.4vw, 168px); line-height: .9; letter-spacing: 0; }
     .hero-title .row { display: block; overflow: hidden; }
     .hero-title .row > span { display: block; transform: translateY(105%); animation: slideUp 1.05s var(--ease) forwards; }
     .hero-title .row:nth-child(1) > span { animation-delay: .5s; } .hero-title .row:nth-child(2) > span { animation-delay: .66s; } .hero-title .row:nth-child(3) > span { animation-delay: .82s; }
@@ -50,24 +52,24 @@
     .marquee { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--ink-2); padding: 22px 0; overflow: hidden; }
     .marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
     .marquee:hover .marquee-track { animation-play-state: paused; }
-    .marquee-item { display: flex; align-items: center; gap: 30px; padding: 0 30px; font-family: 'Playfair Display SC', serif; font-size: 17px; text-transform: uppercase; letter-spacing: .04em; color: var(--sub); white-space: nowrap; }
-    .marquee-item .star { color: var(--gold); font-style: italic; }
+    .marquee-item { display: flex; align-items: center; gap: 34px; padding: 0 34px; font-family: 'Playfair Display', serif; font-variation-settings: 'opsz' 40, 'wght' 380; font-style: italic; font-size: 22px; letter-spacing: -.01em; color: var(--sub); white-space: nowrap; }
+    .marquee-item .star { color: var(--gold-dim); font-style: normal; font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 16px; }
     @keyframes marquee { to { transform: translateX(-50%); } }
 
     /* MANIFESTO */
-    #manifesto { padding: 150px var(--pad); max-width: 1500px; margin: 0 auto; }
+    #manifesto { padding: 190px var(--pad); max-width: 1500px; margin: 0 auto; }
     .manifesto-grid { display: grid; grid-template-columns: 1fr 1.55fr; gap: 80px; align-items: start; }
     .manifesto-side { position: sticky; top: 130px; display: flex; flex-direction: column; gap: 26px; }
     .manifesto-side .mark { height: 60px; width: auto; align-self: flex-start; mix-blend-mode: screen; opacity: .9; }
     .manifesto-side p { font-size: 12.5px; line-height: 1.9; color: var(--muted); max-width: 32ch; }
-    .manifesto-lede { font-size: clamp(26px, 3.1vw, 46px); line-height: 1.32; letter-spacing: -.01em; font-weight: 300; font-family: 'Montserrat', sans-serif; color: var(--text); }
-    .manifesto-lede .gold { font-family: 'Playfair Display SC', serif; }
+    .manifesto-lede { font-size: clamp(27px, 3.3vw, 50px); line-height: 1.3; letter-spacing: -.015em; font-weight: 300; font-family: 'Montserrat', sans-serif; color: var(--text); }
+    .manifesto-lede .gold { font-family: 'Playfair Display', serif; font-variation-settings: 'opsz' 100, 'wght' 400; }
     .manifesto-foot { margin-top: 46px; padding-top: 32px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 14px 26px; align-items: center; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--sub); }
     .manifesto-foot .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--gold-dim); }
-    .manifesto-foot .sig { font-family: 'Playfair Display SC', serif; font-style: italic; font-size: 16px; text-transform: none; letter-spacing: .02em; color: var(--text); }
+    .manifesto-foot .sig { font-family: 'Playfair Display', serif; font-variation-settings: 'opsz' 36, 'wght' 420; font-style: italic; font-size: 18px; text-transform: none; letter-spacing: -.01em; color: var(--text); }
 
     /* WORKS */
-    #works { padding: 140px var(--pad) 150px; }
+    #works { padding: 176px var(--pad) 188px; }
     .works-main { display: grid; grid-template-columns: repeat(12, 1fr); gap: 8px; margin-bottom: 8px; }
     .works-row { display: grid; gap: 8px; margin-bottom: 8px; }
     .works-row.three { grid-template-columns: repeat(3, 1fr); }
@@ -78,25 +80,25 @@
     .works-row.two .pc { min-height: 440px; }
 
     /* STUDIO */
-    #studio { padding: 150px var(--pad); background: var(--ink-2); display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: center; border-top: 1px solid var(--line); }
+    #studio { padding: 190px var(--pad); background: var(--ink-2); display: grid; grid-template-columns: 1fr 1fr; gap: 110px; align-items: center; border-top: 1px solid var(--line); }
     .studio-brand { height: 64px; width: auto; mix-blend-mode: screen; opacity: .9; margin-bottom: 44px; }
-    #studio h2 { font-size: clamp(32px, 3.7vw, 56px); line-height: 1.06; letter-spacing: -.015em; }
+    #studio h2 { font-size: clamp(36px, 4.2vw, 66px); line-height: 1.04; letter-spacing: 0; }
     .studio-body p { font-size: 15px; font-weight: 300; line-height: 1.95; color: var(--sub); margin-bottom: 22px; }
     #studio .stats { margin-top: 48px; padding-top: 44px; border-top: 1px solid var(--line); grid-template-columns: repeat(3, 1fr); }
     #studio .tags { margin-top: 40px; }
 
     /* DISCIPLINES */
-    #disciplines { padding: 140px var(--pad); }
+    #disciplines { padding: 188px var(--pad); }
     .disc-list { border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr; column-gap: 90px; }
     .disc { padding: 38px 0 34px; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 44px 1fr; gap: 24px; align-items: baseline; transition: padding-left .45s var(--ease); }
     .disc:hover { padding-left: 14px; }
-    .disc-n { font-family: 'Playfair Display SC', serif; font-style: italic; font-size: 15px; color: var(--gold-dim); }
-    .disc-name { font-family: 'Playfair Display SC', serif; font-style: italic; font-size: clamp(22px, 2.2vw, 31px); line-height: 1; text-transform: none; letter-spacing: -.005em; margin-bottom: 14px; transition: color .35s; }
+    .disc-n { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: .14em; color: var(--gold-dim); font-feature-settings: 'tnum' 1; }
+    .disc-name { font-family: 'Playfair Display SC', serif; font-style: normal; font-size: clamp(25px, 2.5vw, 38px); line-height: 1.06; text-transform: none; letter-spacing: .01em; margin-bottom: 14px; transition: color .35s; }
     .disc:hover .disc-name { color: var(--gold); }
     .disc-body { font-size: 13px; font-weight: 300; line-height: 1.85; color: var(--muted); max-width: 46ch; }
 
     /* PHILOSOPHY */
-    #philosophy { padding: 140px var(--pad); background: var(--ink-2); border-top: 1px solid var(--line); }
+    #philosophy { padding: 188px var(--pad); background: var(--ink-2); border-top: 1px solid var(--line); }
     /* .tenets/.tenet* now live in shared site.css */
 
     #cta h2 { font-size: clamp(44px, 7.4vw, 122px); }
@@ -190,20 +192,20 @@
 <!-- MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span class="marquee-item">Architecture <span class="star">✦</span></span>
-    <span class="marquee-item">Interior Design <span class="star">✦</span></span>
-    <span class="marquee-item">3D Visualisation <span class="star">✦</span></span>
-    <span class="marquee-item">Landscape <span class="star">✦</span></span>
-    <span class="marquee-item">Residential <span class="star">✦</span></span>
-    <span class="marquee-item">Commercial <span class="star">✦</span></span>
-    <span class="marquee-item">Romania &amp; Spain <span class="star">✦</span></span>
-    <span class="marquee-item">Architecture <span class="star">✦</span></span>
-    <span class="marquee-item">Interior Design <span class="star">✦</span></span>
-    <span class="marquee-item">3D Visualisation <span class="star">✦</span></span>
-    <span class="marquee-item">Landscape <span class="star">✦</span></span>
-    <span class="marquee-item">Residential <span class="star">✦</span></span>
-    <span class="marquee-item">Commercial <span class="star">✦</span></span>
-    <span class="marquee-item">Romania &amp; Spain <span class="star">✦</span></span>
+    <span class="marquee-item">Architecture <span class="star">/</span></span>
+    <span class="marquee-item">Interior Design <span class="star">/</span></span>
+    <span class="marquee-item">3D Visualisation <span class="star">/</span></span>
+    <span class="marquee-item">Landscape <span class="star">/</span></span>
+    <span class="marquee-item">Residential <span class="star">/</span></span>
+    <span class="marquee-item">Commercial <span class="star">/</span></span>
+    <span class="marquee-item">Romania &amp; Spain <span class="star">/</span></span>
+    <span class="marquee-item">Architecture <span class="star">/</span></span>
+    <span class="marquee-item">Interior Design <span class="star">/</span></span>
+    <span class="marquee-item">3D Visualisation <span class="star">/</span></span>
+    <span class="marquee-item">Landscape <span class="star">/</span></span>
+    <span class="marquee-item">Residential <span class="star">/</span></span>
+    <span class="marquee-item">Commercial <span class="star">/</span></span>
+    <span class="marquee-item">Romania &amp; Spain <span class="star">/</span></span>
   </div>
 </div>
 
@@ -303,9 +305,9 @@
     <img class="studio-brand" src="./Logo Variants/Full Mark.png" alt="Draw Clever" />
     <h2>Architecture that<br />elevates <span class="gold">how you live.</span></h2>
     <div class="stats">
-      <div class="stat"><div class="n">MMXIV</div><div class="l">Atelier<br />established</div></div>
-      <div class="stat"><div class="n">II</div><div class="l">Ateliers —<br />Romania &amp; Spain</div></div>
-      <div class="stat"><div class="n">III</div><div class="l">Continents<br />served</div></div>
+      <div class="stat"><div class="n">2014</div><div class="l">Atelier<br />established</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">Ateliers —<br />Romania &amp; Spain</div></div>
+      <div class="stat"><div class="n">3</div><div class="l">Continents<br />served</div></div>
     </div>
   </div>
   <div class="studio-right reveal d2">
@@ -330,11 +332,11 @@
     <p class="intro">Architecture, interiors and grounds — authored by one team, from the first sketch to the final handover. We do not refer out.</p>
   </div>
   <div class="disc-list reveal d1">
-    <div class="disc"><div class="disc-n">I</div><div><h3 class="disc-name">Architecture</h3><p class="disc-body">Full design from concept through construction drawings, for residences and selected commercial commissions.</p></div></div>
-    <div class="disc"><div class="disc-n">II</div><div><h3 class="disc-name">Interior Design</h3><p class="disc-body">Bespoke spatial planning, material specification, joinery and lighting — authored as one continuous gesture.</p></div></div>
-    <div class="disc"><div class="disc-n">III</div><div><h3 class="disc-name">Visualisation</h3><p class="disc-body">Photoreal renders prepared in-house, so a building can be inhabited on screen long before it is built.</p></div></div>
-    <div class="disc"><div class="disc-n">IV</div><div><h3 class="disc-name">Landscape</h3><p class="disc-body">Pools, terraces, gardens and entrance courts — the architecture's quieter half, designed in the same hand.</p></div></div>
-    <div class="disc"><div class="disc-n">V</div><div><h3 class="disc-name">Stewardship</h3><p class="disc-body">Oversight from planning permission to handover. We do not leave the site until the work matches the drawings.</p></div></div>
+    <div class="disc"><div class="disc-n">01</div><div><h3 class="disc-name">Architecture</h3><p class="disc-body">Full design from concept through construction drawings, for residences and selected commercial commissions.</p></div></div>
+    <div class="disc"><div class="disc-n">02</div><div><h3 class="disc-name">Interior Design</h3><p class="disc-body">Bespoke spatial planning, material specification, joinery and lighting — authored as one continuous gesture.</p></div></div>
+    <div class="disc"><div class="disc-n">03</div><div><h3 class="disc-name">Visualisation</h3><p class="disc-body">Photoreal renders prepared in-house, so a building can be inhabited on screen long before it is built.</p></div></div>
+    <div class="disc"><div class="disc-n">04</div><div><h3 class="disc-name">Landscape</h3><p class="disc-body">Pools, terraces, gardens and entrance courts — the architecture's quieter half, designed in the same hand.</p></div></div>
+    <div class="disc"><div class="disc-n">05</div><div><h3 class="disc-name">Stewardship</h3><p class="disc-body">Oversight from planning permission to handover. We do not leave the site until the work matches the drawings.</p></div></div>
   </div>
   <div style="margin-top:40px;" class="reveal d2"><a href="services.html" class="link">Explore our services <svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a></div>
 </section>
@@ -349,10 +351,10 @@
     <p class="intro">Architecture has confused novelty with value. We work in the older tradition — buildings that compose themselves over a lifetime, in materials that age with their inhabitants.</p>
   </div>
   <div class="tenets reveal d1">
-    <div class="tenet"><div class="tenet-n">I</div><h3 class="tenet-t">Restraint</h3><p class="tenet-b">The discipline of removing, until what remains is essential and exact.</p></div>
-    <div class="tenet"><div class="tenet-n">II</div><h3 class="tenet-t">Materiality</h3><p class="tenet-b">Honest materials, honestly detailed. Stone, timber and light authored as carefully as the geometry itself.</p></div>
-    <div class="tenet"><div class="tenet-n">III</div><h3 class="tenet-t">Permanence</h3><p class="tenet-b">Buildings designed to be inherited, not refurbished. A century is our minimum horizon.</p></div>
-    <div class="tenet"><div class="tenet-n">IV</div><h3 class="tenet-t">Discretion</h3><p class="tenet-b">The work speaks first. We let the architecture introduce the client, never the other way around.</p></div>
+    <div class="tenet"><div class="tenet-n">01</div><h3 class="tenet-t">Restraint</h3><p class="tenet-b">The discipline of removing, until what remains is essential and exact.</p></div>
+    <div class="tenet"><div class="tenet-n">02</div><h3 class="tenet-t">Materiality</h3><p class="tenet-b">Honest materials, honestly detailed. Stone, timber and light authored as carefully as the geometry itself.</p></div>
+    <div class="tenet"><div class="tenet-n">03</div><h3 class="tenet-t">Permanence</h3><p class="tenet-b">Buildings designed to be inherited, not refurbished. A century is our minimum horizon.</p></div>
+    <div class="tenet"><div class="tenet-n">04</div><h3 class="tenet-t">Discretion</h3><p class="tenet-b">The work speaks first. We let the architecture introduce the client, never the other way around.</p></div>
   </div>
 </section>
 

@@ -14,22 +14,25 @@
     @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
     @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
     @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Playfair Display'; src: url('./Fonts/Playfair_Display/PlayfairDisplay.ttf') format('truetype-variations'), url('./Fonts/Playfair_Display/PlayfairDisplay.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Playfair Display'; src: url('./Fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype-variations'), url('./Fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype'); font-weight: 100 900; font-style: italic; font-display: swap; }
   </style>
   <link rel="stylesheet" href="/src/site.css" />
   <style>
-    #services { padding: 130px var(--pad); }
+    #services { padding: 176px var(--pad); }
     .svc-list { border-top: 1px solid var(--line); margin-top: 8px; }
-    .svc { display: grid; grid-template-columns: 96px 1fr auto; gap: 48px; align-items: center; padding: 46px 0; border-bottom: 1px solid var(--line); transition: padding-left .45s var(--ease); }
+    .svc { text-decoration: none; color: inherit; display: grid; grid-template-columns: 96px 1fr auto; gap: 48px; align-items: center; padding: 46px 0; border-bottom: 1px solid var(--line); transition: padding-left .45s var(--ease); }
     .svc:hover { padding-left: 14px; }
-    .svc-n { font-family: 'Playfair Display SC', serif; font-style: italic; font-size: clamp(30px, 3.4vw, 46px); line-height: 1; background: var(--grad-gold); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .svc-main h2 { font-family: 'Playfair Display SC', serif; font-style: italic; font-size: clamp(24px, 2.6vw, 38px); line-height: 1; text-transform: none; letter-spacing: -.01em; margin-bottom: 14px; transition: color .35s; }
+    .svc-n { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: .2em; color: var(--gold-dim); font-feature-settings: 'tnum' 1; transition: color .35s; }
+    .svc:hover .svc-n { color: var(--gold); }
+    .svc-main h2 { font-family: 'Playfair Display SC', serif; font-style: normal; font-size: clamp(26px, 2.8vw, 40px); line-height: 1.04; text-transform: none; letter-spacing: .01em; margin-bottom: 14px; transition: color .35s; }
     .svc:hover .svc-main h2 { color: var(--gold); }
     .svc-desc { font-size: 13.5px; font-weight: 300; line-height: 1.85; color: var(--muted); max-width: 62ch; }
     .svc-go { width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--line-2); display: flex; align-items: center; justify-content: center; transition: border-color .35s, background .35s, transform .4s var(--ease); flex-shrink: 0; }
     .svc-go svg { width: 16px; height: 16px; stroke: var(--sub); fill: none; stroke-width: 1.4; transition: stroke .35s; }
     .svc:hover .svc-go { border-color: var(--gold-dim); background: rgba(200,169,106,.1); transform: rotate(0); }
     .svc:hover .svc-go svg { stroke: var(--gold); }
-    #process { padding: 130px var(--pad); background: var(--ink-2); border-top: 1px solid var(--line); }
+    #process { padding: 176px var(--pad); background: var(--ink-2); border-top: 1px solid var(--line); }
     @media (max-width: 780px) {
       #services, #process { padding: 80px 20px; }
       .svc { grid-template-columns: 64px 1fr; gap: 20px 22px; align-items: start; padding: 34px 0; }
@@ -121,10 +124,10 @@
     <p class="intro">One continuous engagement — no hand-offs, no referrals out. The same team carries your project from the first conversation to the moment you hold the keys.</p>
   </div>
   <div class="tenets reveal d1">
-    <div class="tenet"><div class="tenet-n">I</div><h3 class="tenet-t">Listen</h3><p class="tenet-b">Every commission begins with listening — to you, to the site, to the light. We translate intent into a brief.</p></div>
-    <div class="tenet"><div class="tenet-n">II</div><h3 class="tenet-t">Design</h3><p class="tenet-b">Concept through construction drawings. Architecture and interiors authored together, in one hand.</p></div>
-    <div class="tenet"><div class="tenet-n">III</div><h3 class="tenet-t">Visualise</h3><p class="tenet-b">Photoreal renders, so you inhabit the space on screen and decide with certainty before we build.</p></div>
-    <div class="tenet"><div class="tenet-n">IV</div><h3 class="tenet-t">Deliver</h3><p class="tenet-b">Oversight from permission to handover. We do not leave the site until the work matches the drawings.</p></div>
+    <div class="tenet"><div class="tenet-n">01</div><h3 class="tenet-t">Listen</h3><p class="tenet-b">Every commission begins with listening — to you, to the site, to the light. We translate intent into a brief.</p></div>
+    <div class="tenet"><div class="tenet-n">02</div><h3 class="tenet-t">Design</h3><p class="tenet-b">Concept through construction drawings. Architecture and interiors authored together, in one hand.</p></div>
+    <div class="tenet"><div class="tenet-n">03</div><h3 class="tenet-t">Visualise</h3><p class="tenet-b">Photoreal renders, so you inhabit the space on screen and decide with certainty before we build.</p></div>
+    <div class="tenet"><div class="tenet-n">04</div><h3 class="tenet-t">Deliver</h3><p class="tenet-b">Oversight from permission to handover. We do not leave the site until the work matches the drawings.</p></div>
   </div>
 </section>
 
