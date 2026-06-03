@@ -14,7 +14,7 @@ A complete multi-page site:
 
 | Page | File | |
 |---|---|---|
-| **Home** | `index.html` | WebGL depth-parallax hero, manifesto, selected works, studio, disciplines, tenets, CTA |
+| **Home** | `index.html` | Cinematic still hero, manifesto, selected works, studio, disciplines, tenets, CTA |
 | **Portfolio** | `projects.html` | All projects in a filterable gallery (Architecture / Interior / Residential / Commercial), each opening a lightbox |
 | **About** | `about-us.html` | Studio story, stats, ethos tenets, the two ateliers |
 | **Services** | `services.html` | Five disciplines + the "first sketch to final key" process |
@@ -26,10 +26,9 @@ Shared chrome and design system live in **`src/site.css`** + **`src/site.js`**
 
 Highlights:
 
-- **WebGL depth-parallax hero** (`src/hero.js`, Three.js). A real depth map drives
-  per-pixel parallax as the cursor moves — foreground swims, background holds.
-  Degrades gracefully: no WebGL → static graded photo; no depth map → cinematic pan;
-  `prefers-reduced-motion` → still image. (Three.js loads on the homepage only.)
+- **Cinematic hero** — a graded full-bleed still with a slow intro zoom and a filmic
+  veil. (A WebGL depth-parallax module remains in `src/hero.js` but is currently
+  unused; the `three` dependency can be dropped if it stays that way.)
 - **Gold-gradient display type** — headline accents use the logo's exact gold ramp
   via `background-clip: text`.
 - **Lightbox galleries** (`src/lightbox.js`) for all 8 projects — keyboard nav,
@@ -78,7 +77,7 @@ index.html  projects.html  about-us.html  services.html  contact.html  404.html
 src/
   site.css                 # shared design system (chrome, primitives, lightbox)
   site.js                  # shared behaviour (nav, reveals, drawer, parallax, FAQ)
-  hero.js                  # Three.js depth-parallax hero (homepage)
+  hero.js                  # WebGL depth-parallax hero (currently unused)
   lightbox.js              # project gallery lightbox + manifest
 public/
   Renders/<Project>/…       # project photography (+ depth_map_output.png)
