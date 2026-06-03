@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Draw Clever</title>
+  <meta name="description" content="The Draw Clever portfolio — luxury residences, interiors and commercial spaces across Romania, Spain and beyond. Every space, a story." />
+  <meta name="theme-color" content="#0A0908" />
+  <link rel="icon" type="image/png" href="./Logo Variants/Logo Mark.png" />
+  <style>
+    @font-face { font-family: 'Montserrat'; src: url('./Fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype-variations'), url('./Fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Montserrat'; src: url('./Fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype-variations'), url('./Fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype'); font-weight: 100 900; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; font-display: swap; }
+  </style>
+  <link rel="stylesheet" href="/src/site.css" />
+  <style>
+    #portfolio { padding: 110px var(--pad) 150px; }
+    .pf-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 48px; }
+    .pf-filter { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--sub); background: transparent; border: 1px solid var(--line-2); border-radius: 100px; padding: 11px 22px; cursor: pointer; transition: color .3s, background .3s, border-color .3s; }
+    .pf-filter:hover { color: var(--text); border-color: var(--gold-dim); }
+    .pf-filter.active { color: #15110A; background: var(--grad-gold); border-color: transparent; }
+    .pf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(440px, 1fr)); gap: 8px; }
+    .pf-grid .pc { aspect-ratio: 4 / 3; }
+    .pc.hide { display: none; }
+    @media (max-width: 680px) { #portfolio { padding-top: 80px; } .pf-grid { grid-template-columns: 1fr; } .pf-grid .pc { aspect-ratio: 3 / 2; } }
+  </style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<nav id="nav">
+  <a href="index.html" class="brand" aria-label="Draw Clever — home"><img src="./Logo Variants/Logo Mark.png" alt="Draw Clever" /><span class="brand-meta">Est. MMXIV</span></a>
+  <ul class="nav-links">
+    <li><a href="projects.html" class="active">Portfolio</a></li>
+    <li><a href="about-us.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Open menu" aria-controls="drawer" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-inner">
+    <ul class="drawer-links">
+      <li><a href="projects.html" class="active">Portfolio</a></li>
+      <li><a href="about-us.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="drawer-foot">
+      <span class="e">Draw Clever</span>
+      <p class="l">Romania &middot; Spain<br /><a href="mailto:hello@drawclever.com">hello@drawclever.com</a></p>
+      <ul class="drawer-social"><li><a href="https://www.instagram.com/drawclever.design/">Instagram</a></li><li><a href="https://pinterest.com/drawclever/">Pinterest</a></li><li><a href="https://x.com/DrawClever">X</a></li></ul>
+    </div>
+  </div>
+</div>
+
+<!-- BANNER -->
+<header class="banner">
+  <div class="banner-bg" style="background-image:url('./Renders/Casa Marbella/05-scaled.jpg')"></div>
+  <div class="banner-inner">
+    <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><span>Portfolio</span></div>
+    <span class="eyebrow" style="margin-top:18px;">Our Portfolio</span>
+    <h1>Every space,<br /><span class="gold">a story.</span></h1>
+    <p class="sub">A decade of residences, interiors and commercial spaces — composed across Romania, Spain and beyond. Select any project to enter its gallery.</p>
+  </div>
+</header>
+
+<!-- PORTFOLIO GRID -->
+<section id="portfolio">
+  <div class="pf-filters reveal">
+    <button class="pf-filter active" data-filter="all">All</button>
+    <button class="pf-filter" data-filter="architecture">Architecture</button>
+    <button class="pf-filter" data-filter="interior">Interior Design</button>
+    <button class="pf-filter" data-filter="residential">Residential</button>
+    <button class="pf-filter" data-filter="commercial">Commercial</button>
+  </div>
+  <div class="pf-grid reveal d1">
+    <article class="pc" data-project="casa-marbella" data-cat="architecture residential" aria-label="Open Casa Marbella gallery">
+      <img src="./Renders/Casa Marbella/04-scaled.jpg" alt="Casa Marbella" loading="lazy" />
+      <div class="pc-info"><div class="pc-cat">Architecture · Residential</div><div class="pc-name">Casa Marbella</div><div class="pc-loc">Marbella, Spain</div></div>
+      <span class="pc-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </article>
+    <article class="pc" data-project="penthouse-oradea" data-cat="interior residential" aria-label="Open Penthouse Oradea gallery">
+      <img src="./Renders/Penthouse Oradea/21.jpg" alt="Penthouse Oradea" loading="lazy" />
+      <div class="pc-info"><div class="pc-cat">Interior Design</div><div class="pc-name">Penthouse Oradea</div><div class="pc-loc">Oradea, Romania</div></div>
+      <span class="pc-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </article>
+    <article class="pc" data-project="florida-house" data-cat="architecture residential" aria-label="Open Florida House gallery">
+      <img src="./Renders/Florida House/01.jpg" alt="Florida House" loading="lazy" />
+      <div class="pc-info"><div class="pc-cat">Architecture · Residential</div><div class="pc-name">Florida House</div><div class="pc-loc">Florida, USA</div></div>
+      <span class="pc-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </article>
+    <article class="pc" data-project="casa-corbeanca" data-cat="architecture residential" aria-label="Open Villa Corbeanca gallery">
+      <img src="./Renders/Casa Corebeanca/110.jpg" alt="Villa Corbeanca" loading="lazy" />
+      <div class="pc-info"><div class="pc-cat">Architecture · Residential</div><div class="pc-name">Villa Corbeanca</div><div class="pc-loc">Corbeanca, Romania</div></div>
+      <span class="pc-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </article>
+    <article class="pc" data-project="event-hall-baia-mare" data-cat="interior commercial" aria-label="Open Grand Event Hall gallery">
+      <img src="./Renders/Event Hall Baia Mare/02_2-Photo-scaled.jpg" alt="Grand Event Hall" loading="lazy" />
+      <div class="pc-info"><div class="pc-cat">Interior Design · Commercial</div><div class="pc-name">Grand Event Hall</div><div class="pc-loc">Baia Mare, Romania</div></div>
+      <span class="pc-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </article>
+    <article class="pc" data-project="boutique-mosilor" data-cat="architecture residential" aria-label="Open Boutique Moșilor gallery">
+      <img src="./Renders/Boutique Mosilor/03-scaled.jpg" alt="Boutique Moșilor" loading="lazy" />
+      <div class="pc-info"><div class="pc-cat">Architecture · Residential</div><div class="pc-name">Boutique Moșilor</div><div class="pc-loc">Bucharest, Romania</div></div>
+      <span class="pc-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </article>
+    <article class="pc" data-project="apartment-in-oradea" data-cat="interior residential" aria-label="Open Apartment in Oradea gallery">
+      <img src="./Renders/Apartment in Oradea/03-6-scaled.jpg" alt="Apartment in Oradea" loading="lazy" />
+      <div class="pc-info"><div class="pc-cat">Interior Design</div><div class="pc-name">Apartment in Oradea</div><div class="pc-loc">Oradea, Romania</div></div>
+      <span class="pc-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </article>
+    <article class="pc" data-project="uav-library" data-cat="architecture commercial" aria-label="Open University Library gallery">
+      <img src="./Renders/UAV Library/74.jpg" alt="University Library" loading="lazy" />
+      <div class="pc-info"><div class="pc-cat">Architecture · Cultural</div><div class="pc-name">University Library</div><div class="pc-loc">Arad, Romania</div></div>
+      <span class="pc-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </article>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <span class="eyebrow center reveal">Start a conversation</span>
+  <h2 class="reveal d1">Your space, our<br /><span class="gold">next story.</span></h2>
+  <a href="contact.html" class="btn btn-solid reveal d2" style="font-size:11px;padding:17px 46px;">Begin Your Project</a>
+</section>
+
+<footer>
+  <div class="foot-top">
+    <a href="index.html" aria-label="Draw Clever — home"><img src="./Logo Variants/Word Mark.png" alt="Draw Clever" /></a>
+    <ul class="foot-nav"><li><a href="projects.html">Portfolio</a></li><li><a href="about-us.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul>
+  </div>
+  <div class="foot-bottom">
+    <p>© 2026 Draw Clever — We redefine the luxury life.</p>
+    <ul class="foot-social"><li><a href="https://www.instagram.com/drawclever.design/">Instagram</a></li><li><a href="https://pinterest.com/drawclever/">Pinterest</a></li><li><a href="https://x.com/DrawClever">X</a></li></ul>
+    <a href="#top" class="to-top">Back to top <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></a>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    const pills = [...document.querySelectorAll('.pf-filter')];
+    const cards = [...document.querySelectorAll('.pf-grid .pc')];
+    pills.forEach((p) => p.addEventListener('click', () => {
+      pills.forEach((x) => x.classList.remove('active'));
+      p.classList.add('active');
+      const f = p.dataset.filter;
+      cards.forEach((c) => {
+        const show = f === 'all' || (c.dataset.cat || '').split(' ').includes(f);
+        c.classList.toggle('hide', !show);
+      });
+    }));
+  })();
+</script>
+<script type="module" src="/src/site.js"></script>
+<script type="module" src="/src/lightbox.js"></script>
+</body>
+</html>

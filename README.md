@@ -10,21 +10,40 @@ design atelier with studios in Romania and Spain.
 
 ## What's here
 
-A single, deeply-built homepage (`index.html`) with:
+A complete multi-page site:
+
+| Page | File | |
+|---|---|---|
+| **Home** | `index.html` | WebGL depth-parallax hero, manifesto, selected works, studio, disciplines, tenets, CTA |
+| **Portfolio** | `projects.html` | All projects in a filterable gallery (Architecture / Interior / Residential / Commercial), each opening a lightbox |
+| **About** | `about-us.html` | Studio story, stats, ethos tenets, the two ateliers |
+| **Services** | `services.html` | Five disciplines + the "first sketch to final key" process |
+| **Contact** | `contact.html` | Ateliers, project enquiry form, FAQ |
+| **404** | `404.html` | Self-contained styled not-found page |
+
+Shared chrome and design system live in **`src/site.css`** + **`src/site.js`**
+(loaded by every page); page-specific section styles stay inline per page.
+
+Highlights:
 
 - **WebGL depth-parallax hero** (`src/hero.js`, Three.js). A real depth map drives
   per-pixel parallax as the cursor moves — foreground swims, background holds.
   Degrades gracefully: no WebGL → static graded photo; no depth map → cinematic pan;
-  `prefers-reduced-motion` → still image.
+  `prefers-reduced-motion` → still image. (Three.js loads on the homepage only.)
 - **Gold-gradient display type** — headline accents use the logo's exact gold ramp
   via `background-clip: text`.
-- **Selected Works** — an editorial grid of 8 projects, each opening a fullscreen
-  **lightbox gallery** (`src/lightbox.js`) with keyboard nav, focus handling and
-  neighbour preloading.
-- Manifesto, full-bleed parallax interludes, studio + facts, disciplines, four
-  tenets, contact CTA, footer.
-- Film-grain overlay, scroll-progress bar, scroll reveals, a mobile drawer, and a
-  full responsive pass. Reduced-motion friendly.
+- **Lightbox galleries** (`src/lightbox.js`) for all 8 projects — keyboard nav,
+  focus handling, neighbour preloading.
+- Film-grain overlay, scroll-progress bar, scroll reveals, full-bleed parallax
+  interludes, a mobile drawer, FAQ accordion, and a full responsive pass.
+  Reduced-motion friendly.
+
+## Live preview
+
+Published via GitHub Pages (auto-deploys on push to `main` through
+`.github/workflows/deploy.yml`):
+
+**https://rub3n-0lte4n.github.io/Draw-Clever-v2/**
 
 ## Brand palette (from the logo)
 
@@ -55,20 +74,25 @@ a domain root, a GitHub Pages project subpath, or straight off disk — no confi
 ## Structure
 
 ```
-index.html                 # the homepage (styles inline)
-src/hero.js                # Three.js depth-parallax hero
-src/lightbox.js            # project gallery lightbox + manifest
+index.html  projects.html  about-us.html  services.html  contact.html  404.html
+src/
+  site.css                 # shared design system (chrome, primitives, lightbox)
+  site.js                  # shared behaviour (nav, reveals, drawer, parallax, FAQ)
+  hero.js                  # Three.js depth-parallax hero (homepage)
+  lightbox.js              # project gallery lightbox + manifest
 public/
   Renders/<Project>/…       # project photography (+ depth_map_output.png)
   Logo Variants/…           # brand marks
   Fonts/…                   # self-hosted Montserrat + Playfair Display SC
+.github/workflows/deploy.yml  # build + publish to GitHub Pages
 ```
 
 ### Add a project
 
 1. Drop images in `public/Renders/<Project Name>/`.
 2. Add an entry to `PROJECTS` in `src/lightbox.js` (key = the card's `data-project`).
-3. Add a card in the Selected Works grid in `index.html`.
+3. Add a card (with `data-project` + `data-cat`) to the grid in `projects.html`
+   and/or the Selected Works grid in `index.html`.
 
 ---
 

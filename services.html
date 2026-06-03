@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Draw Clever</title>
+  <meta name="description" content="Architecture, interior design, 3D visualisation, landscaping and project management — a complete studio, authored by one team from concept to handover." />
+  <meta name="theme-color" content="#0A0908" />
+  <link rel="icon" type="image/png" href="./Logo Variants/Logo Mark.png" />
+  <style>
+    @font-face { font-family: 'Montserrat'; src: url('./Fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype-variations'), url('./Fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Montserrat'; src: url('./Fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype-variations'), url('./Fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype'); font-weight: 100 900; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; font-display: swap; }
+  </style>
+  <link rel="stylesheet" href="/src/site.css" />
+  <style>
+    #services { padding: 130px var(--pad); }
+    .svc-list { border-top: 1px solid var(--line); margin-top: 8px; }
+    .svc { display: grid; grid-template-columns: 96px 1fr auto; gap: 48px; align-items: center; padding: 46px 0; border-bottom: 1px solid var(--line); transition: padding-left .45s var(--ease); }
+    .svc:hover { padding-left: 14px; }
+    .svc-n { font-family: 'Playfair Display SC', serif; font-style: italic; font-size: clamp(30px, 3.4vw, 46px); line-height: 1; background: var(--grad-gold); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .svc-main h2 { font-family: 'Playfair Display SC', serif; font-style: italic; font-size: clamp(24px, 2.6vw, 38px); line-height: 1; text-transform: none; letter-spacing: -.01em; margin-bottom: 14px; transition: color .35s; }
+    .svc:hover .svc-main h2 { color: var(--gold); }
+    .svc-desc { font-size: 13.5px; font-weight: 300; line-height: 1.85; color: var(--muted); max-width: 62ch; }
+    .svc-go { width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--line-2); display: flex; align-items: center; justify-content: center; transition: border-color .35s, background .35s, transform .4s var(--ease); flex-shrink: 0; }
+    .svc-go svg { width: 16px; height: 16px; stroke: var(--sub); fill: none; stroke-width: 1.4; transition: stroke .35s; }
+    .svc:hover .svc-go { border-color: var(--gold-dim); background: rgba(200,169,106,.1); transform: rotate(0); }
+    .svc:hover .svc-go svg { stroke: var(--gold); }
+    #process { padding: 130px var(--pad); background: var(--ink-2); border-top: 1px solid var(--line); }
+    @media (max-width: 780px) {
+      #services, #process { padding: 80px 20px; }
+      .svc { grid-template-columns: 64px 1fr; gap: 20px 22px; align-items: start; padding: 34px 0; }
+      .svc-go { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<nav id="nav">
+  <a href="index.html" class="brand" aria-label="Draw Clever — home"><img src="./Logo Variants/Logo Mark.png" alt="Draw Clever" /><span class="brand-meta">Est. MMXIV</span></a>
+  <ul class="nav-links">
+    <li><a href="projects.html">Portfolio</a></li>
+    <li><a href="about-us.html">About</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Open menu" aria-controls="drawer" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-inner">
+    <ul class="drawer-links">
+      <li><a href="projects.html">Portfolio</a></li>
+      <li><a href="about-us.html">About</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="drawer-foot">
+      <span class="e">Draw Clever</span>
+      <p class="l">Romania &middot; Spain<br /><a href="mailto:hello@drawclever.com">hello@drawclever.com</a></p>
+      <ul class="drawer-social"><li><a href="https://www.instagram.com/drawclever.design/">Instagram</a></li><li><a href="https://pinterest.com/drawclever/">Pinterest</a></li><li><a href="https://x.com/DrawClever">X</a></li></ul>
+    </div>
+  </div>
+</div>
+
+<!-- BANNER -->
+<header class="banner">
+  <div class="banner-bg" style="background-image:url('./Renders/Apartment in Oradea/01-6-scaled.jpg')"></div>
+  <div class="banner-inner">
+    <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><span>Services</span></div>
+    <span class="eyebrow" style="margin-top:18px;">What We Offer</span>
+    <h1>A complete<br /><span class="gold">studio.</span></h1>
+    <p class="sub">Architecture, interiors, visualisation, landscape and management — five disciplines, one team, from the first sketch to the final key.</p>
+  </div>
+</header>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="svc-list">
+    <a class="svc reveal" href="contact.html" aria-label="Start an architecture project">
+      <div class="svc-n">01</div>
+      <div class="svc-main"><h2>Architecture</h2><p class="svc-desc">Full architectural design from concept through construction — residential and commercial projects delivered worldwide.</p></div>
+      <span class="svc-go"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </a>
+    <a class="svc reveal" href="contact.html" aria-label="Start an interior design project">
+      <div class="svc-n">02</div>
+      <div class="svc-main"><h2>Interior Design</h2><p class="svc-desc">Bespoke interiors tailored to your lifestyle — spatial planning, material selection, furniture and lighting.</p></div>
+      <span class="svc-go"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </a>
+    <a class="svc reveal" href="contact.html" aria-label="Start a 3D visualisation project">
+      <div class="svc-n">03</div>
+      <div class="svc-main"><h2>3D Visualisation</h2><p class="svc-desc">Photorealistic renders that let you see and feel your space — long before a single wall is built.</p></div>
+      <span class="svc-go"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </a>
+    <a class="svc reveal" href="contact.html" aria-label="Start a landscaping project">
+      <div class="svc-n">04</div>
+      <div class="svc-main"><h2>Landscaping</h2><p class="svc-desc">Exterior environments designed to extend the architecture — pools, terraces, gardens and entrance courts.</p></div>
+      <span class="svc-go"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </a>
+    <a class="svc reveal" href="contact.html" aria-label="Start a project management engagement">
+      <div class="svc-n">05</div>
+      <div class="svc-main"><h2>Project Management</h2><p class="svc-desc">End-to-end oversight from planning permission to handover — your project delivered on time, on brief.</p></div>
+      <span class="svc-go"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+    </a>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="sec-head reveal">
+    <div>
+      <span class="eyebrow">How We Work</span>
+      <h2>From first sketch<br />to <span class="gold">final key.</span></h2>
+    </div>
+    <p class="intro">One continuous engagement — no hand-offs, no referrals out. The same team carries your project from the first conversation to the moment you hold the keys.</p>
+  </div>
+  <div class="tenets reveal d1">
+    <div class="tenet"><div class="tenet-n">I</div><h3 class="tenet-t">Listen</h3><p class="tenet-b">Every commission begins with listening — to you, to the site, to the light. We translate intent into a brief.</p></div>
+    <div class="tenet"><div class="tenet-n">II</div><h3 class="tenet-t">Design</h3><p class="tenet-b">Concept through construction drawings. Architecture and interiors authored together, in one hand.</p></div>
+    <div class="tenet"><div class="tenet-n">III</div><h3 class="tenet-t">Visualise</h3><p class="tenet-b">Photoreal renders, so you inhabit the space on screen and decide with certainty before we build.</p></div>
+    <div class="tenet"><div class="tenet-n">IV</div><h3 class="tenet-t">Deliver</h3><p class="tenet-b">Oversight from permission to handover. We do not leave the site until the work matches the drawings.</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <span class="eyebrow center reveal">Begin</span>
+  <h2 class="reveal d1">Ready to start something <span class="gold">remarkable?</span></h2>
+  <a href="contact.html" class="btn btn-solid reveal d2" style="font-size:11px;padding:17px 46px;">Get in Touch</a>
+</section>
+
+<footer>
+  <div class="foot-top">
+    <a href="index.html" aria-label="Draw Clever — home"><img src="./Logo Variants/Word Mark.png" alt="Draw Clever" /></a>
+    <ul class="foot-nav"><li><a href="projects.html">Portfolio</a></li><li><a href="about-us.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul>
+  </div>
+  <div class="foot-bottom">
+    <p>© 2026 Draw Clever — We redefine the luxury life.</p>
+    <ul class="foot-social"><li><a href="https://www.instagram.com/drawclever.design/">Instagram</a></li><li><a href="https://pinterest.com/drawclever/">Pinterest</a></li><li><a href="https://x.com/DrawClever">X</a></li></ul>
+    <a href="#top" class="to-top">Back to top <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></a>
+  </div>
+</footer>
+
+<script type="module" src="/src/site.js"></script>
+</body>
+</html>

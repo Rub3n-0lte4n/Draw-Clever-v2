@@ -26,7 +26,14 @@ export default defineConfig({
     emptyOutDir: true,
     assetsInlineLimit: 0,
     rollupOptions: {
-      input: { index: resolve(__dirname, 'index.html') },
+      input: {
+        index:    resolve(__dirname, 'index.html'),
+        projects: resolve(__dirname, 'projects.html'),
+        about:    resolve(__dirname, 'about-us.html'),
+        services: resolve(__dirname, 'services.html'),
+        contact:  resolve(__dirname, 'contact.html'),
+        notFound: resolve(__dirname, '404.html'),
+      },
     },
   },
 
