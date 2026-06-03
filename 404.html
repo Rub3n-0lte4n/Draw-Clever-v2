@@ -9,19 +9,19 @@
   <!-- Self-contained: a 404 may be served at any path depth, so it must not
        depend on relatively-resolved external CSS. -->
   <style>
-    @font-face { font-family: 'Playfair Display SC'; src: url('/Fonts/Playfair_Display_SC/PlayfairDisplaySC-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Playfair Display SC'; src: url('/Fonts/Playfair_Display_SC/PlayfairDisplaySC-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
-    @font-face { font-family: 'Playfair Display'; src: url('/Fonts/Playfair_Display/PlayfairDisplay.ttf') format('truetype-variations'), url('/Fonts/Playfair_Display/PlayfairDisplay.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Playfair Display'; src: url('/Fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype-variations'), url('/Fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype'); font-weight: 100 900; font-style: italic; font-display: swap; }
-    @font-face { font-family: 'Inter'; src: url('/Fonts/Inter/Inter.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Playfair Display SC'; src: url('/Fonts/Playfair_Display_SC/PlayfairDisplaySC-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: block; }
+    @font-face { font-family: 'Playfair Display SC'; src: url('/Fonts/Playfair_Display_SC/PlayfairDisplaySC-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: block; }
+    @font-face { font-family: 'Playfair Display'; src: url('/Fonts/Playfair_Display/PlayfairDisplay.ttf') format('truetype-variations'), url('/Fonts/Playfair_Display/PlayfairDisplay.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: block; }
+    @font-face { font-family: 'Playfair Display'; src: url('/Fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype-variations'), url('/Fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype'); font-weight: 100 900; font-style: italic; font-display: block; }
+    @font-face { font-family: 'Inter'; src: url('/Fonts/Inter/Inter.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: block; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root { --ink:#0A0908; --text:#F3EEE6; --sub:#B3ABA0; --muted:#6E675C; --line:#211F1B; --champ:#EAD9B0;
+    :root { --ink:#0A0908; --text:#F3EEE6; --sub:#B3ABA0; --muted:#6E675C; --line:#211F1B; --line-2:#2C2925; --champ:#EAD9B0; --ease:cubic-bezier(.16,1,.3,1);
       --grad-gold: linear-gradient(102deg,#EAD9B0 0%,#D9BD82 26%,#C8A96A 50%,#B5853F 76%,#9C6B2E 100%); }
     @view-transition { navigation: auto; }
     ::view-transition-old(root) { animation: vt-out .34s cubic-bezier(.16,1,.3,1) both; }
     ::view-transition-new(root) { animation: vt-in .5s cubic-bezier(.16,1,.3,1) both; }
-    @keyframes vt-out { to { opacity: 0; transform: translateY(-10px); } }
-    @keyframes vt-in { from { opacity: 0; transform: translateY(16px); } }
+    @keyframes vt-out { to { opacity: 0; } }
+    @keyframes vt-in { from { opacity: 0; } }
     @media (prefers-reduced-motion: reduce) { ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; } }
     body { background: var(--ink); color: var(--text); font-family: 'Inter', sans-serif; font-weight: 300; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px; -webkit-font-smoothing: antialiased; overflow: hidden; }
     .mark { height: 46px; margin-bottom: 56px; mix-blend-mode: screen; opacity: .9; }
@@ -34,9 +34,22 @@
     .links { margin-top: 30px; display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; }
     .links a { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .3s; }
     .links a:hover { color: #C8A96A; }
+    #dc-loader { position: fixed; inset: 0; z-index: 9500; background: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .7s var(--ease), visibility .7s; }
+    html.dc-loading { overflow: hidden; }
+    html.dc-loading #dc-loader { opacity: 1; visibility: visible; pointer-events: auto; }
+    #dc-loader .dc-mark { height: 50px; width: auto; mix-blend-mode: screen; opacity: .9; animation: dcPulse 2.1s ease-in-out infinite; }
+    #dc-loader .dc-bar { position: relative; width: 122px; height: 1px; background: var(--line-2); overflow: hidden; }
+    #dc-loader .dc-bar::after { content: ''; position: absolute; inset: 0; background: var(--grad-gold); transform: translateX(-100%); animation: dcBar 1.5s var(--ease) infinite; }
+    @keyframes dcPulse { 0%,100% { opacity: .4; } 50% { opacity: 1; } }
+    @keyframes dcBar { to { transform: translateX(100%); } }
+    html.dc-ready .code, html.dc-ready h1, html.dc-ready p, html.dc-ready .btn, html.dc-ready .links { animation: dcHeadIn .9s var(--ease) both; }
+    html.dc-ready h1 { animation-delay: .12s; } html.dc-ready p { animation-delay: .22s; } html.dc-ready .btn { animation-delay: .32s; } html.dc-ready .links { animation-delay: .42s; }
+    @keyframes dcHeadIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
   </style>
+  <script>(function(){var h=document.documentElement,first=true;try{first=!sessionStorage.getItem("dcv");sessionStorage.setItem("dcv","1");}catch(e){}if(!first){h.classList.add('dc-ready');return;}h.classList.add('dc-loading');var MIN=450,MAX=4500,t0=Date.now(),done=false;function go(){if(done)return;done=true;setTimeout(function(){h.classList.remove('dc-loading');h.classList.add('dc-ready');},Math.max(0,MIN-(Date.now()-t0)));}var ff=document.fonts;(ff&&ff.ready?ff.ready:Promise.resolve()).then(go);setTimeout(go,MAX);})();</script>
 </head>
 <body>
+  <div id="dc-loader" aria-hidden="true"><img class="dc-mark" src="/Logo Variants/Logo Mark.png" alt="" /><span class="dc-bar"></span></div>
   <img class="mark" src="/Logo Variants/Logo Mark.png" alt="Draw Clever" />
   <div class="code">404</div>
   <h1>This space hasn't<br />been <span class="i">built</span> yet.</h1>

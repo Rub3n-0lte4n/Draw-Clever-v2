@@ -8,16 +8,17 @@
   <meta name="theme-color" content="#0A0908" />
   <link rel="icon" type="image/png" href="./Logo Variants/Logo Mark.png" />
   <style>
-    @font-face { font-family: 'Inter'; src: url('./Fonts/Inter/Inter.ttf') format('truetype-variations'), url('./Fonts/Inter/Inter.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Inter'; src: url('./Fonts/Inter/Inter-Italic.ttf') format('truetype-variations'), url('./Fonts/Inter/Inter-Italic.ttf') format('truetype'); font-weight: 100 900; font-style: italic; font-display: swap; }
-    @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
-    @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; font-display: swap; }
-    @font-face { font-family: 'Playfair Display'; src: url('./Fonts/Playfair_Display/PlayfairDisplay.ttf') format('truetype-variations'), url('./Fonts/Playfair_Display/PlayfairDisplay.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Playfair Display'; src: url('./Fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype-variations'), url('./Fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype'); font-weight: 100 900; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Inter'; src: url('./Fonts/Inter/Inter.ttf') format('truetype-variations'), url('./Fonts/Inter/Inter.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: block; }
+    @font-face { font-family: 'Inter'; src: url('./Fonts/Inter/Inter-Italic.ttf') format('truetype-variations'), url('./Fonts/Inter/Inter-Italic.ttf') format('truetype'); font-weight: 100 900; font-style: italic; font-display: block; }
+    @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: block; }
+    @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: block; }
+    @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: block; }
+    @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; font-display: block; }
+    @font-face { font-family: 'Playfair Display'; src: url('./Fonts/Playfair_Display/PlayfairDisplay.ttf') format('truetype-variations'), url('./Fonts/Playfair_Display/PlayfairDisplay.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: block; }
+    @font-face { font-family: 'Playfair Display'; src: url('./Fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype-variations'), url('./Fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype'); font-weight: 100 900; font-style: italic; font-display: block; }
   </style>
   <link rel="stylesheet" href="/src/site.css" />
+  <script>(function(){var h=document.documentElement,first=true;try{first=!sessionStorage.getItem("dcv");sessionStorage.setItem("dcv","1");}catch(e){}h.classList.add(first?"dc-loading":"dc-ready");})();</script>
   <style>
     #story { padding: 150px var(--pad) 30px; }
     .story-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 90px; align-items: start; }
@@ -37,6 +38,7 @@
   </style>
 </head>
 <body>
+<div id="dc-loader" aria-hidden="true"><img class="dc-mark" src="./Logo Variants/Logo Mark.png" alt="" /><span class="dc-bar"></span></div>
 
 <div class="grain" aria-hidden="true"></div>
 <div class="progress" id="progress" aria-hidden="true"></div>
@@ -71,7 +73,7 @@
 <!-- BANNER -->
 <header class="banner">
   <div class="banner-bg" style="background-image:url('./Renders/Penthouse Oradea/21.jpg')"></div>
-  <div class="banner-inner">
+  <div class="banner-inner dc-head">
     <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><span>About</span></div>
     <span class="eyebrow" style="margin-top:18px;">About Draw Clever</span>
     <h1>We redefine<br />the <span class="gold">luxury life.</span></h1>

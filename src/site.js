@@ -4,6 +4,30 @@
  * full-bleed parallax, smooth in-page anchors, mobile drawer, FAQ accordion.
  */
 
+// LOADER reveal — release the first-paint loader once fonts + the hero/banner
+// image are ready, then hand off to the header on-load animation (dc-ready).
+(function () {
+  const h = document.documentElement;
+  if (!h.classList.contains('dc-loading')) return; // fonts cached → already dc-ready
+  const MIN = 450, MAX = 4500, start = performance.now();
+  let done = false;
+  function reveal() {
+    if (done) return; done = true;
+    const wait = Math.max(0, MIN - (performance.now() - start));
+    setTimeout(() => { h.classList.remove('dc-loading'); h.classList.add('dc-ready'); }, wait);
+  }
+  function criticalImage() {
+    const el = document.querySelector('.hero-bg, .banner-bg');
+    let url = '';
+    if (el) { const m = (getComputedStyle(el).backgroundImage || '').match(/url\(["']?([^"')]+)["']?\)/); if (m) url = m[1]; }
+    if (!url) return Promise.resolve();
+    return new Promise((res) => { const im = new Image(); im.onload = im.onerror = () => res(); im.src = url; });
+  }
+  const fonts = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+  Promise.all([fonts, criticalImage()]).then(reveal);
+  setTimeout(reveal, MAX); // failsafe — never hang
+})();
+
 // NAV solidify + scroll progress
 const nav = document.getElementById('nav');
 const progress = document.getElementById('progress');
