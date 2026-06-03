@@ -14,8 +14,8 @@
 
   <!-- Fonts inline (document-relative so they resolve on any base) -->
   <style>
-    @font-face { font-family: 'Montserrat'; src: url('./Fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype-variations'), url('./Fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Montserrat'; src: url('./Fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype-variations'), url('./Fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype'); font-weight: 100 900; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Inter'; src: url('./Fonts/Inter/Inter.ttf') format('truetype-variations'), url('./Fonts/Inter/Inter.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Inter'; src: url('./Fonts/Inter/Inter-Italic.ttf') format('truetype-variations'), url('./Fonts/Inter/Inter-Italic.ttf') format('truetype'); font-weight: 100 900; font-style: italic; font-display: swap; }
     @font-face { font-family: 'Playfair Display'; src: url('./Fonts/Playfair_Display/PlayfairDisplay.ttf') format('truetype-variations'), url('./Fonts/Playfair_Display/PlayfairDisplay.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
     @font-face { font-family: 'Playfair Display'; src: url('./Fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype-variations'), url('./Fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype'); font-weight: 100 900; font-style: italic; font-display: swap; }
     @font-face { font-family: 'Playfair Display SC'; src: url('./Fonts/Playfair_Display_SC/PlayfairDisplaySC-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
@@ -53,7 +53,7 @@
     .marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
     .marquee:hover .marquee-track { animation-play-state: paused; }
     .marquee-item { display: flex; align-items: center; gap: 34px; padding: 0 34px; font-family: 'Playfair Display', serif; font-variation-settings: 'opsz' 40, 'wght' 380; font-style: italic; font-size: 22px; letter-spacing: -.01em; color: var(--sub); white-space: nowrap; }
-    .marquee-item .star { color: var(--gold-dim); font-style: normal; font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 16px; }
+    .marquee-item .star { color: var(--gold-dim); font-style: normal; font-family: 'Inter', sans-serif; font-weight: 300; font-size: 16px; }
     @keyframes marquee { to { transform: translateX(-50%); } }
 
     /* MANIFESTO */
@@ -62,7 +62,7 @@
     .manifesto-side { position: sticky; top: 130px; display: flex; flex-direction: column; gap: 26px; }
     .manifesto-side .mark { height: 60px; width: auto; align-self: flex-start; mix-blend-mode: screen; opacity: .9; }
     .manifesto-side p { font-size: 12.5px; line-height: 1.9; color: var(--muted); max-width: 32ch; }
-    .manifesto-lede { font-size: clamp(27px, 3.3vw, 50px); line-height: 1.3; letter-spacing: -.015em; font-weight: 300; font-family: 'Montserrat', sans-serif; color: var(--text); }
+    .manifesto-lede { font-size: clamp(27px, 3.3vw, 50px); line-height: 1.3; letter-spacing: -.015em; font-weight: 300; font-family: 'Inter', sans-serif; color: var(--text); }
     .manifesto-lede .gold { font-family: 'Playfair Display', serif; font-variation-settings: 'opsz' 100, 'wght' 400; }
     .manifesto-foot { margin-top: 46px; padding-top: 32px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 14px 26px; align-items: center; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--sub); }
     .manifesto-foot .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--gold-dim); }
@@ -92,7 +92,7 @@
     .disc-list { border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr; column-gap: 90px; }
     .disc { padding: 38px 0 34px; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 44px 1fr; gap: 24px; align-items: baseline; transition: padding-left .45s var(--ease); }
     .disc:hover { padding-left: 14px; }
-    .disc-n { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: .14em; color: var(--gold-dim); font-feature-settings: 'tnum' 1; }
+    .disc-n { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: .14em; color: var(--gold-dim); font-feature-settings: 'tnum' 1; }
     .disc-name { font-family: 'Playfair Display SC', serif; font-style: normal; font-size: clamp(25px, 2.5vw, 38px); line-height: 1.06; text-transform: none; letter-spacing: .01em; margin-bottom: 14px; transition: color .35s; }
     .disc:hover .disc-name { color: var(--gold); }
     .disc-body { font-size: 13px; font-weight: 300; line-height: 1.85; color: var(--muted); max-width: 46ch; }

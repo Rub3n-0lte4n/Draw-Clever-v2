@@ -13,7 +13,7 @@
     @font-face { font-family: 'Playfair Display SC'; src: url('/Fonts/Playfair_Display_SC/PlayfairDisplaySC-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
     @font-face { font-family: 'Playfair Display'; src: url('/Fonts/Playfair_Display/PlayfairDisplay.ttf') format('truetype-variations'), url('/Fonts/Playfair_Display/PlayfairDisplay.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
     @font-face { font-family: 'Playfair Display'; src: url('/Fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype-variations'), url('/Fonts/Playfair_Display/PlayfairDisplay-Italic.ttf') format('truetype'); font-weight: 100 900; font-style: italic; font-display: swap; }
-    @font-face { font-family: 'Montserrat'; src: url('/Fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Inter'; src: url('/Fonts/Inter/Inter.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root { --ink:#0A0908; --text:#F3EEE6; --sub:#B3ABA0; --muted:#6E675C; --line:#211F1B; --champ:#EAD9B0;
       --grad-gold: linear-gradient(102deg,#EAD9B0 0%,#D9BD82 26%,#C8A96A 50%,#B5853F 76%,#9C6B2E 100%); }
@@ -23,7 +23,7 @@
     @keyframes vt-out { to { opacity: 0; transform: translateY(-10px); } }
     @keyframes vt-in { from { opacity: 0; transform: translateY(16px); } }
     @media (prefers-reduced-motion: reduce) { ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; } }
-    body { background: var(--ink); color: var(--text); font-family: 'Montserrat', sans-serif; font-weight: 300; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px; -webkit-font-smoothing: antialiased; overflow: hidden; }
+    body { background: var(--ink); color: var(--text); font-family: 'Inter', sans-serif; font-weight: 300; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px; -webkit-font-smoothing: antialiased; overflow: hidden; }
     .mark { height: 46px; margin-bottom: 56px; mix-blend-mode: screen; opacity: .9; }
     .code { font-family: 'Playfair Display SC', serif; font-size: clamp(110px, 26vw, 320px); line-height: .82; letter-spacing: -.01em; color: var(--champ); }
     h1 { font-family: 'Playfair Display SC', serif; font-weight: 400; text-transform: none; font-size: clamp(24px, 3.2vw, 38px); letter-spacing: .012em; margin: 28px 0 16px; }

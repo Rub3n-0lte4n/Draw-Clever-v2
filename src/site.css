@@ -2,7 +2,7 @@
    DRAW CLEVER v2 — shared design system ("Midnight Couture")
    Linked by every page. Page-specific section styles stay inline.
    Ink-black canvas · warm white · the logo's champagne→bronze gold ramp.
-   Display: Playfair Display (variable, mixed-case) · UI: Montserrat.
+   Display: Playfair Display (variable, mixed-case) · UI: Inter.
    ════════════════════════════════════════════════════════════ */
 
 /* ─── FONTS ───
@@ -32,7 +32,7 @@ html { scroll-behavior: smooth; }
 ::view-transition-new(root) { animation: vt-in .5s var(--ease) both; }
 @keyframes vt-out { to { opacity: 0; transform: translateY(-10px); } }
 @keyframes vt-in { from { opacity: 0; transform: translateY(16px); } }
-body { background: var(--ink); color: var(--text); font-family: 'Montserrat', sans-serif; font-weight: 300; overflow-x: hidden; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body { background: var(--ink); color: var(--text); font-family: 'Inter', sans-serif; font-weight: 300; overflow-x: hidden; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 img { display: block; }
 a { color: inherit; }
 [hidden] { display: none !important; }
@@ -58,10 +58,10 @@ h1, h2, h3, h4 { font-family: 'Playfair Display SC', 'Times New Roman', serif; f
 .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; } .d4 { transition-delay: .4s; }
 
 /* ─── PRIMITIVES ─── */
-.eyebrow { font-family: 'Montserrat', sans-serif; font-size: 9.5px; font-weight: 500; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); display: inline-flex; align-items: center; gap: 14px; }
+.eyebrow { font-family: 'Inter', sans-serif; font-size: 9.5px; font-weight: 500; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); display: inline-flex; align-items: center; gap: 14px; }
 .eyebrow::before { content: ''; width: 34px; height: 1px; background: var(--gold-dim); }
 .eyebrow.center::after { content: ''; width: 34px; height: 1px; background: var(--gold-dim); }
-.btn { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; text-decoration: none; padding: 15px 32px; border-radius: 100px; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; gap: 10px; transition: transform .3s var(--ease), background .4s, border-color .4s, color .4s, box-shadow .4s; cursor: pointer; }
+.btn { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; text-decoration: none; padding: 15px 32px; border-radius: 100px; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; gap: 10px; transition: transform .3s var(--ease), background .4s, border-color .4s, color .4s, box-shadow .4s; cursor: pointer; }
 .btn-solid { background: var(--grad-gold); color: #15110A; border: 1px solid transparent; background-size: 160% 160%; }
 .btn-solid:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(200,169,106,.28); background-position: 100% 0; }
 .btn-ghost { background: transparent; color: var(--text); border: 1px solid rgba(243,238,230,.22); }
@@ -170,7 +170,7 @@ body.menu-open .drawer-links li:nth-child(1) a { transition-delay: .08s; } body.
 .tenet { background: var(--ink-2); padding: 54px 38px 58px; transition: background .5s, opacity .6s var(--ease); }
 .tenets:hover .tenet { opacity: .34; }
 .tenets .tenet:hover { opacity: 1; background: var(--ink-3); }
-.tenet-n { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: .22em; color: var(--gold-dim); margin-bottom: 38px; }
+.tenet-n { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 11px; letter-spacing: .22em; color: var(--gold-dim); margin-bottom: 38px; }
 .tenet-t { font-family: 'Playfair Display SC', serif; font-size: 28px; letter-spacing: .015em; text-transform: none; margin-bottom: 16px; }
 .tenet-b { font-size: 12.5px; font-weight: 300; line-height: 1.8; color: var(--muted); }
 
@@ -195,7 +195,7 @@ footer { background: var(--ink); border-top: 1px solid var(--line); padding: 44p
 /* ─── FORM CONTROLS ─── */
 .field { display: flex; flex-direction: column; gap: 10px; }
 .field label { font-size: 9px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
-.field input, .field select, .field textarea { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 300; color: var(--text); background: transparent; border: none; border-bottom: 1px solid var(--line-2); padding: 12px 2px; transition: border-color .35s; }
+.field input, .field select, .field textarea { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 300; color: var(--text); background: transparent; border: none; border-bottom: 1px solid var(--line-2); padding: 12px 2px; transition: border-color .35s; }
 .field textarea { resize: vertical; min-height: 120px; }
 .field input::placeholder, .field textarea::placeholder { color: var(--faint); }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-bottom-color: var(--gold); }
@@ -207,7 +207,7 @@ footer { background: var(--ink); border-top: 1px solid var(--line); padding: 44p
 /* ─── ACCORDION (FAQ) ─── */
 .acc { border-top: 1px solid var(--line); }
 .acc-item { border-bottom: 1px solid var(--line); }
-.acc-q { width: 100%; background: none; border: none; color: var(--text); font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 400; letter-spacing: .02em; text-align: left; padding: 26px 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; cursor: pointer; transition: color .3s; }
+.acc-q { width: 100%; background: none; border: none; color: var(--text); font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 400; letter-spacing: .02em; text-align: left; padding: 26px 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; cursor: pointer; transition: color .3s; }
 .acc-q:hover { color: var(--gold); }
 .acc-icon { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; border: 1px solid var(--line-2); display: flex; align-items: center; justify-content: center; transition: transform .4s var(--ease), border-color .3s, background .3s; }
 .acc-icon::before, .acc-icon::after { content: ''; position: absolute; width: 10px; height: 1.4px; background: var(--gold); }
