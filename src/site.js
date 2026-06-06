@@ -101,3 +101,68 @@ document.querySelectorAll('.acc-q').forEach((btn) => {
     if (!open) item.classList.add('open');
   });
 });
+
+// COUNT-UP — roll .stat .n numbers up when they first enter view.
+// Keeps any prefix/suffix (50+, 5★, 2,000) and figure formatting; fires once.
+(function () {
+  const nums = document.querySelectorAll('.stat .n');
+  if (!nums.length) return;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const easeOut = (x) => 1 - Math.pow(1 - x, 3);
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      obs.unobserve(e.target);
+      const el = e.target;
+      const m = el.textContent.trim().match(/^(\D*)(\d[\d,]*(?:\.\d+)?)(.*)$/);
+      if (!m) return;                                   // non-numeric (e.g. "—") → leave as-is
+      const pre = m[1], raw = m[2], post = m[3];
+      const grouped = raw.includes(',');
+      const target = parseFloat(raw.replace(/,/g, ''));
+      if (!isFinite(target)) return;
+      const decimals = (raw.split('.')[1] || '').length;
+      const fmt = (v) => {
+        const n = v.toFixed(decimals);
+        const s = grouped ? Number(n).toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }) : n;
+        return pre + s + post;
+      };
+      if (reduce) { el.textContent = fmt(target); return; }
+      const dur = 1300, t0 = performance.now();
+      el.textContent = fmt(0);
+      const tick = (now) => {
+        const p = Math.min(1, (now - t0) / dur);
+        el.textContent = fmt(target * easeOut(p));
+        if (p < 1) requestAnimationFrame(tick); else el.textContent = fmt(target);
+      };
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.6 });
+  nums.forEach((n) => obs.observe(n));
+})();
+
+// HEADLINE LINE-REVEAL — wrap display headings into masked lines that rise on
+// scroll, carrying the hero's per-line entrance to every section headline.
+// Targets only display headlines (those with a <br> or a .gold accent); skips
+// the hero (its own animation) and banner heads (animated on load via dc-head).
+(function () {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const heads = [...document.querySelectorAll('h1, h2')].filter((h) =>
+    !h.closest('.hero-title, .dc-head') && (h.querySelector('br') || h.querySelector('.gold'))
+  );
+  if (!heads.length) return;
+  heads.forEach((h) => {
+    if (h.dataset.rl) return;
+    h.innerHTML = h.innerHTML.split(/<br\s*\/?>/i)
+      .map((ln, i) => `<span class="ln"><span class="ln-i" style="--i:${i}">${ln.trim()}</span></span>`)
+      .join('');
+    h.dataset.rl = '1';
+    h.classList.add('rl');
+  });
+  if (reduce) { heads.forEach((h) => h.classList.add('shown')); return; }
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('shown'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+  heads.forEach((h) => obs.observe(h));
+})();
